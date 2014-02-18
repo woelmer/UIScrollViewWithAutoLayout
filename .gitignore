@@ -1,0 +1,14 @@
+*~
+*.swp
+*.swo
+Pods/
+
+# merge conflict temp files
+*.orig
+*.rej
+
+.DS_Store
+
+eko.xcodeproj/project.xcworkspace/xcuserdata/*.xcuserdatad/
+eko.xcodeproj/xcuserdata/*.xcuserdatad/
+eko.xcworkspace/xcuserdata/*.xcuserdatad/
