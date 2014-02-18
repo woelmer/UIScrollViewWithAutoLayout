@@ -9,6 +9,6 @@ Pods/
 
 .DS_Store
 
-eko.xcodeproj/project.xcworkspace/xcuserdata/*.xcuserdatad/
-eko.xcodeproj/xcuserdata/*.xcuserdatad/
-eko.xcworkspace/xcuserdata/*.xcuserdatad/
+*/project.xcworkspace/xcuserdata/*.xcuserdatad/
+*/xcuserdata/*.xcuserdatad/
+*/xcuserdata/*.xcuserdatad/
