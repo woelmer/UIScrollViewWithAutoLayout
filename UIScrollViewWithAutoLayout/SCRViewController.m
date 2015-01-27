@@ -19,23 +19,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:self.contentView
-                                                                      attribute:NSLayoutAttributeLeading
-                                                                      relatedBy:0
-                                                                         toItem:self.view
-                                                                      attribute:NSLayoutAttributeLeft
-                                                                     multiplier:1.0
-                                                                       constant:0];
-    [self.view addConstraint:leftConstraint];
-    
-    NSLayoutConstraint *rightConstraint = [NSLayoutConstraint constraintWithItem:self.contentView
-                                                                       attribute:NSLayoutAttributeTrailing
-                                                                       relatedBy:0
-                                                                          toItem:self.view
-                                                                       attribute:NSLayoutAttributeRight
-                                                                      multiplier:1.0
-                                                                        constant:0];
-    [self.view addConstraint:rightConstraint];
+//    There is no need for these constraints. We can replace these with Equal Width constraint
+//    from self.contentView to self.view. Checkout the storyboard.
+//    NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:self.contentView
+//                                                                      attribute:NSLayoutAttributeLeading
+//                                                                      relatedBy:0
+//                                                                         toItem:self.view
+//                                                                      attribute:NSLayoutAttributeLeft
+//                                                                     multiplier:1.0
+//                                                                       constant:0];
+//    [self.view addConstraint:leftConstraint];
+//    
+//    NSLayoutConstraint *rightConstraint = [NSLayoutConstraint constraintWithItem:self.contentView
+//                                                                       attribute:NSLayoutAttributeTrailing
+//                                                                       relatedBy:0
+//                                                                          toItem:self.view
+//                                                                       attribute:NSLayoutAttributeRight
+//                                                                      multiplier:1.0
+//                                                                        constant:0];
+//    [self.view addConstraint:rightConstraint];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardDidShow:)
