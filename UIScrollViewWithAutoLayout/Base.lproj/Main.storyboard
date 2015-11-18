@@ -3,9 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -22,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SHz-k6-vRL">
-                                <rect key="frame" x="0.0" y="12" width="600" height="588"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rVh-Wb-B5J" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="540"/>
@@ -256,8 +254,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="SHz-k6-vRL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5Ix-Ta-oQj"/>
-                            <constraint firstItem="y3c-jy-aDJ" firstAttribute="bottom" secondItem="SHz-k6-vRL" secondAttribute="topMargin" id="YTY-aa-oGA"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="SHz-k6-vRL" secondAttribute="bottom" id="f5u-ko-6Th"/>
+                            <constraint firstItem="SHz-k6-vRL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="YTY-aa-oGA"/>
+                            <constraint firstItem="SHz-k6-vRL" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="f5u-ko-6Th"/>
                             <constraint firstItem="rVh-Wb-B5J" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="ghs-lw-wBy"/>
                             <constraint firstAttribute="trailing" secondItem="SHz-k6-vRL" secondAttribute="trailing" id="ziA-0i-vZs"/>
                         </constraints>
