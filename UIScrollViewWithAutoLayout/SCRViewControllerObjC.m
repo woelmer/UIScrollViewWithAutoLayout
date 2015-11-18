@@ -51,7 +51,9 @@
 {
     NSDictionary* info = [notification userInfo];
     CGRect kbRect = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
-    kbRect = [self.view convertRect:kbRect fromView:nil];
+    // If you are using Xcode 6 or iOS 7.0, you may need this line of code. There was a bug when you
+    // rotated the device to landscape. It reported the keyboard as the wrong size as if it was still in portrait mode.
+    //kbRect = [self.view convertRect:kbRect fromView:nil];
     
     UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbRect.size.height, 0.0);
     self.scrollView.contentInset = contentInsets;
