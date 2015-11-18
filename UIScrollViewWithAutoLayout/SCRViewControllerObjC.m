@@ -1,41 +1,24 @@
 //
-//  SCRViewController.m
+//  SCRViewControllerObjC.m
 //  UIScrollViewWithAutoLayout
 //
 //  Created by Mike Woelmer on 2/17/14.
 //  Copyright (c) 2014 atomicobject. All rights reserved.
 //
 
-#import "SCRViewController.h"
+#import "SCRViewControllerObjC.h"
 
-@interface SCRViewController ()
+@interface SCRViewControllerObjC ()
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) UITextField *activeField;
 @end
 
-@implementation SCRViewController
+@implementation SCRViewControllerObjC
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:self.contentView
-                                                                      attribute:NSLayoutAttributeLeading
-                                                                      relatedBy:NSLayoutRelationEqual
-                                                                         toItem:self.view
-                                                                      attribute:NSLayoutAttributeLeading
-                                                                     multiplier:1.0
-                                                                       constant:0];
-    [self.view addConstraint:leftConstraint];
-    
-    NSLayoutConstraint *rightConstraint = [NSLayoutConstraint constraintWithItem:self.contentView
-                                                                       attribute:NSLayoutAttributeTrailing
-                                                                       relatedBy:NSLayoutRelationEqual
-                                                                          toItem:self.view
-                                                                       attribute:NSLayoutAttributeTrailing
-                                                                      multiplier:1.0
-                                                                        constant:0];
-    [self.view addConstraint:rightConstraint];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardDidShow:)
