@@ -16,40 +16,39 @@ class SCRViewControllerSwift: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidShow:", name: UIKeyboardDidShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillBeHidden:", name: UIKeyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SCRViewControllerSwift.keyboardDidShow),
+            name: .UIKeyboardDidShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SCRViewControllerSwift.keyboardWillBeHidden),
+            name: .UIKeyboardWillHide, object: nil)
     }
    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
-    func textFieldDidEndEditing(textField: UITextField) {
-        self.activeField = nil
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        activeField = nil
     }
     
-    func textFieldDidBeginEditing(textField: UITextField) {
-        self.activeField = textField
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        activeField = textField
     }
     
-    func keyboardDidShow(notification: NSNotification) {
-        if let activeField = self.activeField, keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-            let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
-            self.scrollView.contentInset = contentInsets
-            self.scrollView.scrollIndicatorInsets = contentInsets
-            var aRect = self.view.frame
-            aRect.size.height -= keyboardSize.size.height
-            if (!CGRectContainsPoint(aRect, activeField.frame.origin)) {
-                self.scrollView.scrollRectToVisible(activeField.frame, animated: true)
-            }
-        }
+    @objc func keyboardDidShow(notification: Notification) {
+        guard let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+        guard let activeField = activeField else { return }
+        let activeRect = activeField.convert(activeField.bounds, to: scrollView)
+        scrollView.scrollRectToVisible(activeRect, animated: true)
     }
     
-    func keyboardWillBeHidden(notification: NSNotification) {
-        let contentInsets = UIEdgeInsetsZero
-        self.scrollView.contentInset = contentInsets
-        self.scrollView.scrollIndicatorInsets = contentInsets
+    @objc func keyboardWillBeHidden(notification: Notification) {
+        let contentInsets = UIEdgeInsets.zero
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
     }
 }
 
