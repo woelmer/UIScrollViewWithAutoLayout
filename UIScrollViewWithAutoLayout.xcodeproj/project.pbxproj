@@ -8,24 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		CBE8631F1BFBFC62007438CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE8631E1BFBFC62007438CC /* AppDelegate.swift */; };
-		CBE863211BFBFC62007438CC /* SCRViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE863201BFBFC62007438CC /* SCRViewControllerSwift.swift */; };
+		CBE863211BFBFC62007438CC /* SCRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE863201BFBFC62007438CC /* SCRViewController.swift */; };
 		CBE863241BFBFC62007438CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBE863221BFBFC62007438CC /* Main.storyboard */; };
 		CBE863261BFBFC62007438CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBE863251BFBFC62007438CC /* Assets.xcassets */; };
 		CBE863291BFBFC62007438CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBE863271BFBFC62007438CC /* LaunchScreen.storyboard */; };
-		CBE863331BFC2CD0007438CC /* SCRViewControllerObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE863321BFC2CD0007438CC /* SCRViewControllerObjC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CBE8631B1BFBFC62007438CC /* UIScrollViewWithAutoLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIScrollViewWithAutoLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE8631E1BFBFC62007438CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CBE863201BFBFC62007438CC /* SCRViewControllerSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCRViewControllerSwift.swift; sourceTree = "<group>"; };
+		CBE863201BFBFC62007438CC /* SCRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCRViewController.swift; sourceTree = "<group>"; };
 		CBE863231BFBFC62007438CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CBE863251BFBFC62007438CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBE863281BFBFC62007438CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBE8632A1BFBFC62007438CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CBE863301BFC2CD0007438CC /* UIScrollViewWithAutoLayout-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollViewWithAutoLayout-Bridging-Header.h"; sourceTree = "<group>"; };
-		CBE863311BFC2CD0007438CC /* SCRViewControllerObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCRViewControllerObjC.h; sourceTree = "<group>"; };
-		CBE863321BFC2CD0007438CC /* SCRViewControllerObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCRViewControllerObjC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,15 +54,12 @@
 		CBE8631D1BFBFC62007438CC /* UIScrollViewWithAutoLayout */ = {
 			isa = PBXGroup;
 			children = (
-				CBE863311BFC2CD0007438CC /* SCRViewControllerObjC.h */,
-				CBE863321BFC2CD0007438CC /* SCRViewControllerObjC.m */,
 				CBE8631E1BFBFC62007438CC /* AppDelegate.swift */,
-				CBE863201BFBFC62007438CC /* SCRViewControllerSwift.swift */,
+				CBE863201BFBFC62007438CC /* SCRViewController.swift */,
 				CBE863221BFBFC62007438CC /* Main.storyboard */,
 				CBE863251BFBFC62007438CC /* Assets.xcassets */,
 				CBE863271BFBFC62007438CC /* LaunchScreen.storyboard */,
 				CBE8632A1BFBFC62007438CC /* Info.plist */,
-				CBE863301BFC2CD0007438CC /* UIScrollViewWithAutoLayout-Bridging-Header.h */,
 			);
 			path = UIScrollViewWithAutoLayout;
 			sourceTree = "<group>";
@@ -143,8 +136,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBE863211BFBFC62007438CC /* SCRViewControllerSwift.swift in Sources */,
-				CBE863331BFC2CD0007438CC /* SCRViewControllerObjC.m in Sources */,
+				CBE863211BFBFC62007438CC /* SCRViewController.swift in Sources */,
 				CBE8631F1BFBFC62007438CC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,11 +210,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -268,10 +262,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -287,7 +283,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.atomicobject.UIScrollViewWithAutoLayout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "UIScrollViewWithAutoLayout/UIScrollViewWithAutoLayout-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -303,7 +299,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.atomicobject.UIScrollViewWithAutoLayout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "UIScrollViewWithAutoLayout/UIScrollViewWithAutoLayout-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

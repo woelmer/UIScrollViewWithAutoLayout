@@ -8,17 +8,16 @@
 
 import UIKit
 
-class SCRViewControllerSwift: UIViewController, UITextFieldDelegate {
+class SCRViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var contentView: UIView!
     weak var activeField: UITextField?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(SCRViewControllerSwift.keyboardDidShow),
+        NotificationCenter.default.addObserver(self, selector: #selector(SCRViewController.keyboardDidShow),
             name: UIResponder.keyboardDidShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(SCRViewControllerSwift.keyboardWillBeHidden),
+        NotificationCenter.default.addObserver(self, selector: #selector(SCRViewController.keyboardWillBeHidden),
             name: UIResponder.keyboardWillHideNotification, object: nil)
     }
    
