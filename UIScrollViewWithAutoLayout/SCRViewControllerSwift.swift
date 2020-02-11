@@ -17,9 +17,9 @@ class SCRViewControllerSwift: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(SCRViewControllerSwift.keyboardDidShow),
-            name: .UIKeyboardDidShow, object: nil)
+            name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(SCRViewControllerSwift.keyboardWillBeHidden),
-            name: .UIKeyboardWillHide, object: nil)
+            name: UIResponder.keyboardWillHideNotification, object: nil)
     }
    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -36,7 +36,7 @@ class SCRViewControllerSwift: UIViewController, UITextFieldDelegate {
     }
     
     @objc func keyboardDidShow(notification: Notification) {
-        guard let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else { return }
         let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
         scrollView.contentInset = contentInsets
         scrollView.scrollIndicatorInsets = contentInsets
