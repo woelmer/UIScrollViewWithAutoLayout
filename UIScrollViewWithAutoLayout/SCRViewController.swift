@@ -35,11 +35,12 @@ class SCRViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func keyboardDidShow(notification: Notification) {
-        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else { return }
-        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
+        let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
+        guard let activeField = activeField, let keyboardHeight = keyboardSize?.height else { return }
+
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardHeight, right: 0.0)
         scrollView.contentInset = contentInsets
         scrollView.scrollIndicatorInsets = contentInsets
-        guard let activeField = activeField else { return }
         let activeRect = activeField.convert(activeField.bounds, to: scrollView)
         scrollView.scrollRectToVisible(activeRect, animated: true)
     }
